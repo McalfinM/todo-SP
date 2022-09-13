@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-ini adalah coding test, menggunakan python versi 3.8
+ini adalah coding test, menggunakan python versi 3.8 dan FAST API sebagai restful
 
 untuk menjalankan ketikan "python -m uvicorn main:app --reload"
 
