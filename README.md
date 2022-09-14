@@ -4,6 +4,11 @@
 
 ini adalah coding test, menggunakan python versi 3.8 dan FAST API sebagai restful
 
+mungkin anda harus install terlebih dahulu
+
+```pip install fastapi```
+```pip install "uvicorn[standard]"```
+
 untuk menjalankan ketikan "python -m uvicorn main:app --reload"
 
 ## Feature API
