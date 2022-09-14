@@ -6,8 +6,8 @@ ini adalah coding test, menggunakan python versi 3.8 dan FAST API sebagai restfu
 
 mungkin anda harus install terlebih dahulu
 
-```pip install fastapi```
-```pip install "uvicorn[standard]"```
+`pip install fastapi`
+`pip install "uvicorn[standard]"`
 
 untuk menjalankan ketikan "python -m uvicorn main:app --reload"
 
@@ -24,7 +24,7 @@ untuk menjalankan ketikan "python -m uvicorn main:app --reload"
 
 ### - Create
 
-URL : localhost:8000/create
+URL : localhost:8000/create POST
 
 Request Body
 | key | type |
@@ -34,7 +34,7 @@ Request Body
 
 ### - Update
 
-URL : localhost:8000/update/{id}
+URL : localhost:8000/update/{id} PUT
 
 Params
 | key | type |
@@ -49,7 +49,7 @@ Request Body
 
 ### - Delete
 
-URL : localhost:8000/delete/{id}
+URL : localhost:8000/delete/{id} DELETE
 
 Params
 | key | type |
@@ -58,11 +58,11 @@ Params
 
 ### - Get
 
-URL : localhost:8000/get
+URL : localhost:8000/get GET
 
 ### - Get One
 
-URL : localhost:8000/get/{id}
+URL : localhost:8000/get/{id} GET
 
 Params
 | key | type |
@@ -71,7 +71,7 @@ Params
 
 ### - Finish Todo
 
-URL : localhost:8000/finish/{id}
+URL : localhost:8000/finish/{id} PATCH
 
 Params
 | key | type |

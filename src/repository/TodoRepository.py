@@ -35,6 +35,7 @@ class TodoRepository:
             if i['id'] == int(id):
                 print(i['title'])
                 return {
+                    "id": i['id'],
                     "title": i['title'],
                     "description": i['description'],
                     "finished_at": i['finished_at'],

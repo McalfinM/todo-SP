@@ -9,13 +9,13 @@ class TodoService:
 
     def create(payload):
         data = {
-            "id": randint(1, 100),
+            "id": randint(1, 999),
             "title": payload.title,
             "description": payload.description,
-            "finished_at": 0,
-            "created_at": datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
-            "updated_at": datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
-            "deleted_at": datetime.today().strftime('%Y-%m-%d %H:%M:%S'),
+            "finished_at": "",
+            "created_at": datetime.today().strftime('%d-%m-%Y %H:%M:%S'),
+            "updated_at": datetime.today().strftime('%d-%m-%Y %H:%M:%S'),
+            "deleted_at": "",
         }
 
         todo = todoRepo.TodoRepository.create(data)
@@ -32,10 +32,11 @@ class TodoService:
 
     def get_one(id):
         todo = todoRepo.TodoRepository.get_one(id)
-        if todo['deleted_at'] == "":
-            return todo
-        else:
-            return {"message": "data not found"}
+        if todo:
+            if todo['deleted_at'] == "":
+                return todo
+            else:
+                return {"message": "data not found"}
 
     def update(id, payload):
         todo = todoRepo.TodoRepository.get_one(id)
@@ -43,7 +44,7 @@ class TodoService:
             data = todoRepo.TodoRepository.update(id, payload)
             return data
         else:
-            return {"message": "data not found"}
+            None
 
     def todo_finish(id):
         todo = todoRepo.TodoRepository.get_one(id)
@@ -51,7 +52,7 @@ class TodoService:
             data = todoRepo.TodoRepository.todo_finish(id)
             return {"message": "data berhasil diupdate"}
         else:
-            return {"message": "data not found"}
+            None
 
     def delete(id):
         todo = todoRepo.TodoRepository.get_one(id)
@@ -59,4 +60,4 @@ class TodoService:
             data = todoRepo.TodoRepository.delete(id)
             return {"message": "data berhasil diupdate"}
         else:
-            return {"message": "data not found"}
+            None
