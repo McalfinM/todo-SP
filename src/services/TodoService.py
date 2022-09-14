@@ -36,19 +36,19 @@ class TodoService:
             if todo['deleted_at'] == "":
                 return todo
             else:
-                return {"message": "data not found"}
+                None
 
     def update(id, payload):
         todo = todoRepo.TodoRepository.get_one(id)
-        if todo:
+        if todo['deleted_at'] == "":
             data = todoRepo.TodoRepository.update(id, payload)
-            return data
+            return {"message": "data berhasil diupdate"}
         else:
             None
 
     def todo_finish(id):
         todo = todoRepo.TodoRepository.get_one(id)
-        if todo:
+        if todo['deleted_at'] == "":
             data = todoRepo.TodoRepository.todo_finish(id)
             return {"message": "data berhasil diupdate"}
         else:
@@ -56,7 +56,7 @@ class TodoService:
 
     def delete(id):
         todo = todoRepo.TodoRepository.get_one(id)
-        if todo:
+        if todo['deleted_at'] == "":
             data = todoRepo.TodoRepository.delete(id)
             return {"message": "data berhasil diupdate"}
         else:
